@@ -5,6 +5,14 @@ function getArtPictures(){
     .then (data => {
         //check data from the api//
         console.log(data);
+        
+        //get title of the img from the data//
+        let imgTitle = data.title;
+        document.getElementById(`imageTitle`).textContent = imgTitle;
+
+        //get img from the data//
+        let imgPicture = data.url
+        document.getElementById(`art1`).src = imgPicture
     })
     .catch(error => console.error(`Error fretching data: `, error));
 }
