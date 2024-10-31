@@ -11,8 +11,8 @@ function getArtPictures(){
         document.getElementById(`imageTitle`).textContent = imgTitle;
 
         //get img from the data//
-        let imgPicture = data.url
-        document.getElementById(`art1`).src = imgPicture
+        let imgPicture = data.image[0].urlImage;
+        document.getElementById(`art1`).src = imgPicture;
     })
     .catch(error => console.error(`Error fretching data: `, error));
 }
