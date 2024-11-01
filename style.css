@@ -1,9 +1,28 @@
-.cardContainer{
+body{
+    background-image: linear-gradient(rgb(28, 28, 28), rgb(60, 23, 0), rgb(255, 215, 172));
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 254, 221);
+    justify-content: space-between;
+}
+
+ul{
     display: flex;
     flex-direction: row;
 }
 
-header{
+#navbar{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+}
+
+.cardContainer{
     display: flex;
     flex-direction: row;
 }
