@@ -19,8 +19,13 @@ function getArtPictures() {
                     .then(data => {
                         //make it return when it has 3 cards//
                         if (displayedCards >= 3) return;
+
+                        const container = document.createElement(`div`);
+                        container.className = 'col-md-4';
+
                         //create main card//
                         const card = document.createElement(`div`);
+                        card.className = 'card mb-3';
 
                         //get the image from the API data and store in imgPicture//
                         const imgPicture = document.createElement(`img`);
@@ -61,6 +66,7 @@ function getArtPictures() {
                         cardBody.appendChild(collection);
                         cardBody.appendChild(dateCreation);
                         cardGroup.appendChild(card);
+                        cardGroup.appendChild(container);
 
                         //track number of the card display//
                         displayedCards++;
