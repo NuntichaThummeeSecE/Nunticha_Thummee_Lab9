@@ -82,12 +82,10 @@ function getArtPictures() {
 
 function filterByClassification(classification) {
     const filteredArtworks = currentArtworks.filter(artwork => {
-        const artworkClassification = artwork.classification ? artwork.classification.toLowerCase() : ``;
-
         if (classification === `Painting`) {
-            return artworkClassification === `painting`;
+            return artwork.classification === `Painting`;
         } else if (classification === `Sculpture`) {
-            return artworkClassification === `sculpture`;
+            return artwork.classification === `Sculpture`;
         } else {
             return true; 
         }
@@ -104,8 +102,8 @@ document.getElementById(`painting`).addEventListener(`click`, () => {
     filterByClassification(`Painting`); 
 });
 
-document.getElementById(`sculpture`).addEventListener(`click`, () => {
-    filterByClassification(`Sculpture`); 
+document.getElementById(`miniatures`).addEventListener(`click`, () => {
+    filterByClassification(`Miniatures`); 
 });
 
 getArtPictures();
