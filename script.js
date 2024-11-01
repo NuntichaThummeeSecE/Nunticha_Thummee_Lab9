@@ -5,13 +5,15 @@ function getArtPictures() {
         .then(data => {
             //check data from the api//
             console.log(data);
-            
             //using for loop to access data id in api//
             const artIds = data.objectIDs;
             //create cardGroup//
             const cardGroup = document.getElementById(`cardGroup`);
+            //make it display only 3 cards//
+            let displayedCards = 0;
 
             for (let artId of artIds) {
+                if (displayedCards >= 3) break;
                 // Get specific art objects from th API//
                 fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/` + artId)
                     .then(response => response.json())
