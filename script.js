@@ -34,25 +34,25 @@ function getArtPictures() {
                         const imgTitle = document.createElement(`h5`);
                         imgTitle.textContent = data.title;
 
-                        //get the description of Art from the API data and store in imgDescription//
-                        const imgDescription = document.createElement(`p`);
-                        imgDescription.textContent = data.objectDescription || `-`;
+                        //get artist name of Art from the API data and store in artistName//
+                        const artistName = document.createElement(`p`);
+                        artistName.textContent = `Artist: ` + data.artistDisplayName || `Unknown`;
 
                         //get the collection of Art from the API data and store in collection//
                         const collection = document.createElement(`p`);
                         collection.textContent = `Collection: ` + data.repository || `-`;
 
-                        //get the copyright of Art from the API data and store in copyright/
-                        const copyright = document.createElement(`p`);
-                        copyright.textContent = data.rights || `-`;
+                        //get date of creating art from the API data and store in dateCreation//
+                        const dateCreation = document.createElement(`p`);
+                        dateCreation.textContent = `Date of creation: ` + data.objectDate || `Unknown`;
 
                         //add elements in to the card//
                         card.appendChild(imgPicture);
                         card.appendChild(cardBody);
                         cardBody.appendChild(imgTitle);
-                        cardBody.appendChild(imgDescription);
+                        cardBody.appendChild(artistName);
                         cardBody.appendChild(collection);
-                        cardBody.appendChild(copyright);
+                        cardBody.appendChild(dateCreation);
                         cardGroup.appendChild(card);
 
                         //track number of the card display//
