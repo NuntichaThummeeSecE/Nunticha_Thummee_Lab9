@@ -89,5 +89,19 @@ function getArtPictures() {
         })
 }
 
+function filterArt(artistName) {
+    const cardGroup = document.getElementById(`cardGroup`);
+    cardGroup.innerHTML = ``; 
+
+    const filteredArtworks = currentArtworks.filter(data => 
+        artistName === `all` || data.artistDisplayName === artistName
+    );
+
+    filteredArtworks.forEach(data => {
+        const card = createArtCard(data);
+        cardGroup.appendChild(card);
+    });
+}
+
 getArtPictures();
 
