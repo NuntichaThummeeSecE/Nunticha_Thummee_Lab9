@@ -13,11 +13,12 @@ function getArtPictures() {
             let displayedCards = 0;
 
             for (let artId of artIds) {
-                if (displayedCards >= 3) break;
                 // Get specific art objects from th API//
                 fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/` + artId)
                     .then(response => response.json())
                     .then(data => {
+                        //make it return when it has 3 cards//
+                        if (displayedCards >= 3) return;
                         //create main card//
                         const card = document.createElement(`div`);
 
@@ -53,6 +54,9 @@ function getArtPictures() {
                         cardBody.appendChild(collection);
                         cardBody.appendChild(copyright);
                         cardGroup.appendChild(card);
+
+                        //track number of the card display//
+                        displayedCards++;
 
                         /*// Get title of the image from the data
                         let imgTitle = data.title;
