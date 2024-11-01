@@ -21,42 +21,34 @@ function getArtPictures() {
                         if (displayedCards >= 3) return;
 
                         const container = document.createElement(`div`);
-                        container.className = `cardContainer`;
+                        container.className = "cardContainer";
 
                         //create main card//
                         const card = document.createElement(`div`);
-                        card.className = `card`;
 
                         //get the image from the API data and store in imgPicture//
                         const imgPicture = document.createElement(`img`);
                         imgPicture.src = data.primaryImageSmall;
                         imgPicture.alt = `Art image`;
-                        imgPicture.className = `card-img-top`;
 
                         //create card body section//
                         const cardBody = document.createElement(`div`);
-                        cardBody.className = `card-body`;
 
                         //get the title of Art from the API data and store in imgTitle//
                         const imgTitle = document.createElement(`h5`);
                         imgTitle.textContent = data.title;
-                        imgTitle.className = `card-title`;
                         
-
                         //get artist name of Art from the API data and store in artistName//
                         const artistName = document.createElement(`p`);
                         artistName.textContent = `Artist: ` + data.artistDisplayName || `Unknown`;
-                        artistName.className = `card-text`;
 
                         //get the collection of Art from the API data and store in collection//
                         const collection = document.createElement(`p`);
                         collection.textContent = `Collection: ` + data.repository || `-`;
-                        collection.className = `card-text`;
 
                         //get date of creating art from the API data and store in dateCreation//
                         const dateCreation = document.createElement(`p`);
                         dateCreation.textContent = `Date of creation: ` + data.objectDate || `Unknown`;
-                        dateCreation.className = `card-text`;
 
                         //add elements in to the card//
                         card.appendChild(imgPicture);
