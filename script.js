@@ -1,3 +1,6 @@
+//create an array to collect datas//
+let currentArtworks = [];
+
 //function geting data from the api//
 function getArtPictures() {
     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11`)
@@ -50,6 +53,9 @@ function getArtPictures() {
                         const dateCreation = document.createElement(`p`);
                         dateCreation.textContent = `Date of creation: ` + data.objectDate || `Unknown`;
 
+                        const classification = document.createElement(`p`);
+                        classification.textContent = `Classification: `+ data.classification || `Unknown`;
+
                         //add elements in to the card//
                         card.appendChild(imgPicture);
                         card.appendChild(cardBody);
@@ -57,11 +63,16 @@ function getArtPictures() {
                         cardBody.appendChild(artistName);
                         cardBody.appendChild(collection);
                         cardBody.appendChild(dateCreation);
+                        cardBody.appendChild(classification);
                         cardGroup.appendChild(card);
                         cardGroup.appendChild(container);
 
                         //track number of the card display//
                         displayedCards++;
+                        //push data into an array//
+                        currentArtworks.push(data);
+
+                        return card;
 
                     })
                     .catch(error => console.error(`Error fetching data: `, error));
@@ -69,6 +80,33 @@ function getArtPictures() {
         })
 }
 
+function filterByClassification(classification) {
+    const filteredArtworks = currentArtworks.filter(artwork => {
+        const artworkClassification = artwork.classification ? artwork.classification.toLowerCase() : ``;
+
+        if (classification === `Painting`) {
+            return artworkClassification === `painting`;
+        } else if (classification === `Sculpture`) {
+            return artworkClassification === `sculpture`;
+        } else {
+            return true; 
+        }
+    });
+
+    displayFilteredArt(filteredArtworks); 
+}
+
+document.getElementById(`allArt`).addEventListener(`click`, () => {
+    displayFilteredArt(currentArtworks); 
+});
+
+document.getElementById(`painting`).addEventListener(`click`, () => {
+    filterByClassification(`Painting`); 
+});
+
+document.getElementById(`sculpture`).addEventListener(`click`, () => {
+    filterByClassification(`Sculpture`); 
+});
 
 getArtPictures();
 
