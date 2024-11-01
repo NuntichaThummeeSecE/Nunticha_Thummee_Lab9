@@ -72,7 +72,7 @@ function getArtPictures() {
                         currentArtworks.push(data);
 
                         //make it return when it has 10 cards//
-                        if (displayedCards >= 10) return;
+                        if (displayedCards >= 9) return;
 
                         //create createArtCard function
                         const artCard = createArtCard(data);
@@ -103,7 +103,7 @@ function filterByClassification(classification) {
     });
 
     // display only 10 cards at a time
-    const limitedArtworks = filteredArtworks.slice(0, 10);
+    const limitedArtworks = filteredArtworks.slice(0, 9);
 
     //display //
     displayFilteredArt(limitedArtworks);
