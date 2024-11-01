@@ -37,7 +37,7 @@ function getArtPictures() {
                         //get the title of Art from the API data and store in imgTitle//
                         const imgTitle = document.createElement(`h5`);
                         imgTitle.textContent = data.title;
-                        
+
                         //get artist name of Art from the API data and store in artistName//
                         const artistName = document.createElement(`p`);
                         artistName.textContent = `Artist: ` + data.artistDisplayName || `Unknown`;
@@ -63,45 +63,12 @@ function getArtPictures() {
                         //track number of the card display//
                         displayedCards++;
 
-                        /*// Get title of the image from the data
-                        let imgTitle = data.title;
-                        document.getElementById(`imageTitle`).textContent = imgTitle;
-
-                        // Get image from the data
-                        let imgPicture = data.primaryImageSmall; // Make sure this index exists
-                        document.getElementById(`art1`).src = imgPicture;
-
-                        // Get collection name
-                        let collection = data.repository;
-                        document.getElementById(`collection`).textContent = `Collection : ` + collection;
-
-                        // Get description from the data
-                        let imgDescription = data.objectDescription || `-`;
-                        document.getElementById(`imageDescription`).textContent = `Description : ` + imgDescription;
-
-                        // Get copyright info
-                        let imgCopyright = data.rights || `No copyright information available`;
-                        document.getElementById(`imageCopyright`).textContent = imgCopyright;*/
-
                     })
                     .catch(error => console.error(`Error fetching data: `, error));
             }
         })
 }
 
-function filterArt(artistName) {
-    const cardGroup = document.getElementById(`cardGroup`);
-    cardGroup.innerHTML = ``; 
-
-    const filteredArtworks = currentArtworks.filter(data => 
-        artistName === `all` || data.artistDisplayName === artistName
-    );
-
-    filteredArtworks.forEach(data => {
-        const card = createArtCard(data);
-        cardGroup.appendChild(card);
-    });
-}
 
 getArtPictures();
 

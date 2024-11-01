@@ -30,10 +30,13 @@
                 <li class="nav-item">
                     <a href="#">Contact Us</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" id="filterMenu">Filter by Artist</a>
-                </li>
             </ul>
+            <div class="button-group">
+                <button onclick="filterArt(`all`)">All Art</button>
+                <button onclick="filterArt(`painting`)">Paintings</button>
+                <button onclick="filterArt(`sculpture`)">Sculptures</button>
+                <button onclick="filterArt(`photography`)">Photography</button>
+            </div>
         </nav>
     </header>
     <!-- add card group bar by using bootstrap -->
