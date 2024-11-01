@@ -68,17 +68,17 @@ function getArtPictures() {
                 fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/` + artId)
                     .then(response => response.json())
                     .then(data => {
-                        //make it return when it has 3 cards//
-                        if (displayedCards >= 3) return;
+                        //push data into an array//
+                        currentArtworks.push(data);
+
+                        //make it return when it has 10 cards//
+                        if (displayedCards >= 10) return;
 
                         //create createArtCard function
                         const artCard = createArtCard(data);
-                        cardGroup.appendChild(artCard);
-
+                        document.getElementById('cardGroup').appendChild(artCard);
                         //track number of the card display//
                         displayedCards++;
-                        //push data into an array//
-                        currentArtworks.push(data);
                     })
                     .catch(error => console.error(`Error fetching data: `, error));
             }
@@ -89,19 +89,12 @@ function getArtPictures() {
 function filterByClassification(classification) {
     const filteredArtworks = currentArtworks.filter(artwork => {
         //check artwork.classification and return to lower case or empty string//
-        const artworkClassification = (artwork) => {
-            if (artwork.classification) {
-                return artwork.classification.toLowerCase();
-            }
-            return ``;
-        };
-
-        const currentClassification = artworkClassification(artwork);
+        const currentClassification = (artwork.classification || '').toLowerCase();
 
         if (classification === `All`) {
             return true; //display all//
-        } else if (classification.toLowerCase() === `painting`) {
-            return currentClassification === `painting`; //return only painting
+        } else if (classification.toLowerCase() === `paintings`) {
+            return currentClassification === `paintings`; //return only painting
         } else if (classification.toLowerCase() === `miniatures`) {
             return currentClassification === `miniatures`; //return only miniatures
         } else {
@@ -109,8 +102,11 @@ function filterByClassification(classification) {
         }
     });
 
-    //display filter//
-    displayFilteredArt(filteredArtworks);
+    // display only 10 cards at a time
+    const limitedArtworks = filteredArtworks.slice(0, 10);
+
+    //display //
+    displayFilteredArt(limitedArtworks);
 
 }
 
@@ -133,7 +129,7 @@ document.getElementById(`allArt`).addEventListener(`click`, () => {
 
 document.getElementById(`painting`).addEventListener(`click`, () => {
     console.log('Painting button clicked');
-    filterByClassification(`Painting`);
+    filterByClassification(`Paintings`);
 });
 
 document.getElementById(`miniatures`).addEventListener(`click`, () => {
