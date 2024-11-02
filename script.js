@@ -139,14 +139,14 @@ document.getElementById(`miniatures`).addEventListener(`click`, () => {
 
 //create a lightbox by using jQuery//
 $(document).ready(function() {
-    $('.cardContainer img').click(function() {
+    $(`#cardGroup`).on(`click`, `.cardContainer img`, function() {
         const imgSrc = $(this).attr(`src`);
         $(`.lightboxImg`).attr('src', imgSrc);
         $(`.lightbox`).fadeIn(`fast`);
     });
 
     // Close lightbox//
-    $(`.close'`).on(`click`, function() {
+    $(document).on(`click`, `.close`, function() {
         $(`.lightbox`).fadeOut(); 
     });
 
