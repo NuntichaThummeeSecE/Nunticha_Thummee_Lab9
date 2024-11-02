@@ -61,6 +61,7 @@ header {
     margin: 0 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: "Lora", serif; 
 }
 
 .buttonGroup button:hover {
@@ -138,3 +139,20 @@ header {
     color: #fff;
     cursor: pointer;
 }
+
+.cardContainer h5 {
+    font-family: "Cinzel", serif;
+    font-size: 1.5em;
+    color: #000;
+    margin: 0;
+    padding: 10px;
+}
+
+.cardContainer p {
+    font-family: "Lora", serif;
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+    padding: 0 10px;
+}
+
