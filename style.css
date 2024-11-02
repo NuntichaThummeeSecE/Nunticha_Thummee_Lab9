@@ -1,12 +1,18 @@
-body{
+body {
     background-image: linear-gradient(rgb(28, 28, 28), rgb(60, 23, 0), rgb(255, 215, 172));
 }
 
-h1{
+h1 {
     color: rgba(255, 238, 177);
+    margin-left: 6%;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 5em;
+    font-style: normal;
 }
 
-header{
+header {
     display: flex;
     flex-direction: row;
     background-size: cover;
@@ -16,49 +22,53 @@ header{
 }
 
 #navbar ul {
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-    display: flex; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 .nav-item {
-    margin: 0 15px; 
+    margin: 0 15px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .nav-item a {
     text-decoration: none;
     color: rgba(255, 238, 177);
-    font-size: 18px; 
-    transition: color 0.3s; 
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
 .nav-item a:hover {
-    color: rgba(255, 238, 177);
+    color: rgb(0, 0, 0);
 }
 
 .buttonGroup {
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-right: 2%;
 }
 
 .buttonGroup button {
-    background-color: rgb(0, 0, 0); 
-    color: rgb(255, 215, 172);
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 15px; 
-    margin: 0 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    background-color: rgb(0, 0, 0);
+    color:  rgba(255, 238, 177);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .buttonGroup button:hover {
-    background-color: rgb(255, 215, 172); 
+    background-color:  rgba(255, 238, 177);
     color: black;
 }
 
-#navbar{
+#navbar {
     display: flex;
     flex-direction: column;
     padding-top: 10%;
@@ -67,30 +77,30 @@ header{
 }
 
 .cardContainer img {
-    width: 100%; 
-    border-top-left-radius: 10px; 
-    border-top-right-radius: 10px; 
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .cardContainer div {
-    padding: 15px; 
+    padding: 15px;
 }
 
 .cardContainer {
     display: flex;
     flex-direction: row;
-    max-width: 400px; 
-    width: 100%; 
-    margin: 15px; 
+    max-width: 400px;
+    width: 100%;
+    margin: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 238, 177, 0.8);
 }
 
 
 .row {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 15px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }

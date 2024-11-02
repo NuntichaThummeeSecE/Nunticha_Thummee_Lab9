@@ -89,7 +89,7 @@ function getArtPictures() {
 function filterByClassification(classification) {
     const filteredArtworks = currentArtworks.filter(artwork => {
         //check artwork.classification and return to lower case or empty string//
-        const currentClassification = (artwork.classification || '').toLowerCase();
+        const currentClassification = (artwork.classification || ``).toLowerCase();
 
         if (classification === `All`) {
             return true; //display all//
