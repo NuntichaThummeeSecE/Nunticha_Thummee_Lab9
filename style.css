@@ -159,7 +159,7 @@ header {
 /* apply specific styles for mobile interface (iphone16) */
 
 @media only screen and (max-width: 393px) {
-    header{
+    header {
         display: flex;
         flex-direction: column;
     }
@@ -175,5 +175,28 @@ header {
         align-items: center;
     }
 
+    #navbar {
+        padding-top: 1%;
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .nav-item a {
+        font-size: 70%;
+    }
+
+    .buttonGroup button {
+        font-size: 70%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .cardContainer h5 {
+        font-size: 1.2em;
+    }
+
+    .cardContainer p {
+        font-size: 0.8em;
+    }
 
 }
