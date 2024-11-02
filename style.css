@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgb(28, 28, 28), rgb(60, 23, 0), rgb(255, 215, 172));
+    background-image: linear-gradient(rgb(28, 28, 28), rgb(60, 23, 0), rgb(28, 28, 28));
 }
 
 h1 {
@@ -61,7 +61,7 @@ header {
     margin: 0 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: "Lora", serif; 
+    font-family: "Lora", serif;
 }
 
 .buttonGroup button:hover {
@@ -156,3 +156,24 @@ header {
     padding: 0 10px;
 }
 
+/* apply specific styles for mobile interface (iphone16) */
+
+@media only screen and (max-width: 393px) {
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 180%;
+        margin-left: 5%;
+    }
+
+    #navbar {
+        padding-top: 1%;
+        margin-left: 0;
+        align-items: center;
+    }
+
+
+}
