@@ -137,4 +137,31 @@ document.getElementById(`miniatures`).addEventListener(`click`, () => {
     filterByClassification(`Miniatures`);
 });
 
+//create a lightbox by using jQuery//
+$(document).ready(function() {
+    $('.cardContainer img').click(function() {
+        const imgSrc = $(this).attr(`src`);
+        $(`.lightboxImg`).attr('src', imgSrc);
+        $(`.lightbox`).fadeIn(`fast`);
+    });
+
+    // Close lightbox//
+    $(`.close'`).on(`click`, function() {
+        $(`.lightbox`).fadeOut(); 
+    });
+
+    // Close lightbox when clicking outside the image//
+    $(`.lightbox`).on(`click`, function(e) {
+        if (e.target === this) {
+            $(this).fadeOut(); 
+        }
+    });
+});
+
+// Function to get art pictures
 getArtPictures();
+
+
+
+getArtPictures();
+
